@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 界面  -->
+    <div id="container">
+    <!-- 商品列表界面 ：包括商品id，商品名称，商品价格，商品图片-->
+    <!-- <table>
+        <thead>
+            <tr>
+                <th>商品ID</th>
+                <th>商品名称</th>
+                <th>商品图片</th>
+                <th>商品价格</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table> -->
+    <!-- 购物车界面：包含商品id，商品名称，商品价格，商品图片 -->
+    <!-- <table>
+            <thead>
+                    <tr>
+                        <th>商品ID</th>
+                        <th>商品名称</th>
+                        <th>商品图片</th>
+                        <th>商品价格</th>
+                        <th>商品数量</th>
+                        <th>操作</th>
+                    </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>id</td>
+                        <td>name</td>
+                        <td>pic</td>
+                        <td>price</td>
+                        <td>num</td>
+                        <td>
+                            <a href="javascript:;">删除</a>
+                        </td>
+                    </tr>
+            </tbody>
+    </table> -->
+    </div>
+</body>
+<script>
+    // 需求：购物车添加好的商品信息，在下一次打开时还会显示在页面上？
+    //技术：localstorage（本地存储）存储在浏览器，所有页面都可以用(同域)
+        // localstorage操作
+                // 1.设置键值对
+                //     localStorage.aa=1;   =》key=aa；value=1
+                // 2.获取键值对
+                //     console.log(localStorage.bb);
+                //     console.log(localStorage.getItem('aa'));
+                // 3.删除键值对
+                //     localStorage.removeItem('aa');
+                // 4.清空所有键值对
+                //     localStorage.clear();
+        // localStorage注意
+                //键和值都是string类型
+                    // 例1：var arr=[1,2,3,4];
+                    //         localStorage.setItem("list",arr)
+                    //         =>1,2,3,4
+                    // 例2：var obj={}
+                    //         localStorage.setItem("list",obj)
+                    //         =>[Object Object]
+
+                // 存入用Json.stringify转为字符串
+                // 取出用Json.parse转为
+                    
+</script>
+<script src="car.js"></script>
+</html>

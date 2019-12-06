@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>二级菜单(树形菜单)</title>
+</head>
+<style>
+	li ul{
+		display: none;
+	}
+</style>
+<body>
+	<ul class="t">
+		<li>一级菜单</li>
+		<li>一级菜单
+			<ul>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+		<li>一级菜单</li>
+		<li>一级菜单</li>
+		<li>一级菜单</li>
+		<li>一级菜单
+			<ul>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+	</ul>
+	<script type="text/javascript" src="./lib/jquery1.12.4.js"></script>
+	<script type="text/javascript">
+		$(".t li").has("ul").hover(function(){
+			$(this).children().stop().show(500)
+		},function(){
+			$(this).children().stop().hide(500)
+		})
+	</script>
+</body>
+</html>

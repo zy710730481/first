@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: red;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body>
+<script>
+    function Drag(id){
+        this.div=document.getElementById(id);
+    }
+
+    Drag.prototype.drag=function(){
+        var _this=this
+        this.div.onmousedown=function(e){
+            var x=e.offsetX;
+            var y=e.offsetY;
+            document.onmousemove=function(e){
+                var left=e.pageX-x;
+                var top=e.pageY-y;
+               
+                var maxLeft=window.innerWidth-_this.div.offsetWidth;
+                var maxTop=window.innerHeight-_this.div.offsetHeight;
+                console.log(maxLeft);
+                left=left<0 ? 0:(left>maxLeft?maxLeft:left);
+                top=top<0 ? 0:(top>maxTop?maxTop:top) ;
+
+                _this.div.style.left=left+"px";
+                _this.div.style.top=top+"px";
+                return false;
+            }
+            document.onmouseup=function(){
+                document.onmousemove=null
+            }
+        }
+    }
+
+    Drag.prototype.init=function(){
+        this.drag();
+    }
+
+    new Drag('box1').init();
+    new Drag('box2').init();
+</script>
+</html>
